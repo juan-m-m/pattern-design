@@ -1,0 +1,21 @@
+@startuml
+
+namespace com.jmontano.patterndesign.creational.factory{
+  interface Product{
+  }
+  class ConcreteProduct{
+  }
+  class Creator{
+  #factoryMethod(): Product;
+  + anOperation()
+  }
+  class ConcreteCreator{
+  + factoryMethod(): Product
+  }
+  ConcreteProduct -up-|> Product
+  ConcreteCreator -up-|> Creator
+
+  Creator .Right.> "use" Product
+  ConcreteCreator .Right.> "create" ConcreteProduct
+}
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+namespace com.jmontano.patterndesign.creational.factory{
+  interface Payment{
+  }
+  class CardPayment{
+  }
+  class GooglePayment{
+  }
+  class PaymentFactory{
+  {static} buildPayment(TypePayment): Payment;
+
+  }
+
+  CardPayment -up-|> Payment
+  GooglePayment -up-|> Payment
+
+  PaymentFactory .Right.> "use" Payment
+}
+@enduml
